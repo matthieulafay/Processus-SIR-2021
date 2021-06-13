@@ -84,6 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="polytech.ico" />
+    <None Include="Resources\7Segment.otf" />
+    <None Include="Resources\Caisse.png" />
     <None Include="Resources\vanneO.bmp" />
     <None Include="Resources\Train.png" />
     <None Include="Resources\Synoptique Processus 2021.png" />

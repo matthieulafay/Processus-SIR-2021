@@ -27,3 +27,23 @@ F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.Gener
 F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.CoreCompileInputs.cache
 F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.exe
 F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.pdb
+D:\Desktop\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.exe.config
+D:\Desktop\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.exe
+D:\Desktop\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.pdb
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csproj.AssemblyReference.cache
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus_SIR_2021.frmProcessus.resources
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus_SIR_2021.Properties.Resources.resources
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csproj.GenerateResource.cache
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csproj.CoreCompileInputs.cache
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.exe
+D:\Desktop\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.pdb
+F:\Cours S6\.NET\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.exe.config
+F:\Cours S6\.NET\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.exe
+F:\Cours S6\.NET\Processus-SIR-2021-master\bin\Debug\Processus SIR-2021.pdb
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csprojAssemblyReference.cache
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus_SIR_2021.frmProcessus.resources
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus_SIR_2021.Properties.Resources.resources
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csproj.GenerateResource.cache
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.csproj.CoreCompileInputs.cache
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.exe
+F:\Cours S6\.NET\Processus-SIR-2021-master\obj\Debug\Processus SIR-2021.pdb

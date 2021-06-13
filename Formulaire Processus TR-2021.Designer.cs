@@ -135,7 +135,6 @@
             // 
             this.lblTempoBroueur.AutoSize = true;
             this.lblTempoBroueur.BackColor = System.Drawing.SystemColors.ControlText;
-            this.lblTempoBroueur.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblTempoBroueur.ForeColor = System.Drawing.Color.Red;
             this.lblTempoBroueur.Location = new System.Drawing.Point(520, 259);
             this.lblTempoBroueur.Name = "lblTempoBroueur";

@@ -6,6 +6,7 @@
 //
 // Etudiant 1 : Pyrat Raphaël
 // Etudiant 2 : Lafay Matthieu
+// Etudiant 3 : Diallo Ahmadou Oury
 
 using System;
 using System.Collections.Generic;
@@ -92,7 +93,7 @@ namespace Processus_SIR_2021
             fontFromFile = new PrivateFontCollection();
             try
             {
-                fontFromFile.AddFontFile(@"..\..\..\ressources\7segment.otf");
+                fontFromFile.AddFontFile(@"..\..\Resources\7segment.otf");
                 fontProcess = new Font(fontFromFile.Families[0], 20, FontStyle.Regular);
             }
             catch
@@ -182,14 +183,14 @@ namespace Processus_SIR_2021
             if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_remplissage))
             {
                 tmr_Convoyeur.Start();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
             // Aboutissage du déplacement de la caisse
             else if (Progression_Convoyeur >= niveau_convoyeur_remplissage)
             {
                 tmr_Convoyeur.Stop();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
                 etatProcess = etatMachine.REMPLISSAGE;
             }
@@ -202,7 +203,7 @@ namespace Processus_SIR_2021
             if (debut_Remplissage == true)
             {
                 // Changement de texture du moteur pour montrer son fonctionnement
-                picVanneRemplissage.Image = Image.FromFile(@"..\..\..\ressources\vanneO.bmp");
+                picVanneRemplissage.Image = Image.FromFile(@"..\..\Resources\vanneO.bmp");
 
                 // Désactivation de l'initialisation du remplissage
                 debut_Remplissage = false;
@@ -215,7 +216,7 @@ namespace Processus_SIR_2021
                 tmrRemplissage.Stop();
 
                 // Changement de texture du moteur pour montrer son arrêt
-                picVanneRemplissage.Image = Image.FromFile(@"..\..\..\ressources\vanneF.bmp");
+                picVanneRemplissage.Image = Image.FromFile(@"..\..\Resources\vanneF.bmp");
 
                 // On passe à l'état suivant si le remplissage a fini
                 etatProcess = etatMachine.DEPLACE_CAISSE_BROYEUR;
@@ -229,14 +230,14 @@ namespace Processus_SIR_2021
             if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_broyeur))
             {
                 tmr_Convoyeur.Start();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
             // Aboutissage déplacement caisse
             else if (Progression_Convoyeur >= niveau_convoyeur_broyeur)
             {
                 tmr_Convoyeur.Stop();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
                 etatProcess = etatMachine.BROYEUR;
             }
@@ -249,7 +250,7 @@ namespace Processus_SIR_2021
             if (debut_Broyeur == true)
             {
                 // Changement de texture du moteur pour montrer son fonctionnement
-                picMoteurBroyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
+                picMoteurBroyeur.Image = Image.FromFile(@"..\..\Resources\moteur ON.png");
 
                 // Démarrage du timer du mélangeur
                 tmrBroyeur.Start();
@@ -284,7 +285,7 @@ namespace Processus_SIR_2021
                 tmrBroyeur.Stop();
 
                 // Changement de la texture du moteur pour montrer son arrêt
-                picMoteurBroyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                picMoteurBroyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 fin_Broyeur = true;
             }
         }
@@ -296,14 +297,14 @@ namespace Processus_SIR_2021
             if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_melangeur))
             {
                 tmr_Convoyeur.Start();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
             // Aboutissage déplacement caisse
             else if (Progression_Convoyeur >= niveau_convoyeur_melangeur)
             {
                 tmr_Convoyeur.Stop();
-                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
                 etatProcess = etatMachine.MELANGEUR;
             }
@@ -313,7 +314,7 @@ namespace Processus_SIR_2021
         private void frmProcessus_MELANGEUR()
         {
             // Changement de texture du moteur pour montrer son fonctionnement
-            picMoteurMelangeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
+            picMoteurMelangeur.Image = Image.FromFile(@"..\..\Resources\moteur ON.png");
 
             // Démarrage du timer du mélangeur
             tmrMelangeur.Start();
@@ -341,7 +342,7 @@ namespace Processus_SIR_2021
                 tmrMelangeur.Stop();
 
                 // Changement de la texture du moteur pour montrer son arrêt
-                picMoteurMelangeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                picMoteurMelangeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 fin_Melangeur = true;
             }
         }
@@ -423,10 +424,10 @@ namespace Processus_SIR_2021
                     tmr_Convoyeur.Stop();
                     tmr_Train.Stop();
                     tmrRemplissage.Stop();
-                    picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
-                    picVanneRemplissage.Image = Image.FromFile(@"..\..\..\ressources\vanneF.bmp");
-                    picMoteurBroyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
-                    picMoteurMelangeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+                    picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
+                    picVanneRemplissage.Image = Image.FromFile(@"..\..\Resources\vanneF.bmp");
+                    picMoteurBroyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
+                    picMoteurMelangeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
                 }
                 // Reactivation du cycle s'il est en pause en redémarrant l'étape en cours
                 else
@@ -481,10 +482,10 @@ namespace Processus_SIR_2021
             etatProcess = etatMachine.INIT;
 
             // Reset des textures
-            picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
-            picVanneRemplissage.Image = Image.FromFile(@"..\..\..\ressources\vanneF.bmp");
-            picMoteurBroyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
-            picMoteurMelangeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
+            picMoteurConvoyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
+            picVanneRemplissage.Image = Image.FromFile(@"..\..\Resources\vanneF.bmp");
+            picMoteurBroyeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
+            picMoteurMelangeur.Image = Image.FromFile(@"..\..\Resources\moteur OFF.png");
             lblTempoBroueur.Text = compteur_Broyeur.ToString("00");
             lblTempoMelangeur.Text = compteur_Melangeur.ToString("00");
             btnCycle.BackColor = SystemColors.Control;
@@ -501,7 +502,7 @@ namespace Processus_SIR_2021
         private void tmr_Train_Tick(object sender, EventArgs e)
         {
             picTrain.Left += pasDeplacementTrain;
-            Progression_Train = picTrain.Left * 100 / Image.FromFile(@"..\..\..\ressources\Synoptique Processus 2021.png").Width;
+            Progression_Train = picTrain.Left * 100 / Image.FromFile(@"..\..\Resources\Synoptique Processus 2021.png").Width;
         }
 
         // Diminution du niveau de la cuve quand le timer de remplissage est activé
