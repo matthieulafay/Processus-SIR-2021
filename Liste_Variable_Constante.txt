@@ -1,0 +1,32 @@
+// Constantes :
+const int temps_broyeur;		// en secondes - temps de durée du broyeur
+const int temps_melangeur;		// en secondes - temps de durée du mélangeur
+const int temps_timer_remplissage;	// en millisecondes - temps pour chaque activation du timer de remplissage
+const int temps_timer_convoyeur;	// en millisecondes - temps pour chaque activation du timer du convoyeur
+const int temps_timer_train;		// en millisecondes - temps pour chaque activation du timer du train
+const int pasRemplissage;		// en pixels - pas de vidage de la cuve à chaque activation du timer de remplissage
+const int pasDeplacementConvoyeur;	// en pixels - pas de déplacement du convoyeur à chaque activation du timer du convoyeur
+const int pasDeplacementTrain;		// en pixels - pas de déplacement du train à chaque activation du timer du train
+const int niveau_convoyeur_remplissage;	// en % de la taille du convoyeur - % où le convoyeur s'arrête pour le remplissage
+const int niveau_convoyeur_broyeur;	// en % de la taille du convoyeur - % où le convoyeur s'arrête pour le broyeur
+const int niveau_convoyeur_melangeur;	// en % de la taille du convoyeur - % où le convoyeur s'arrête pour le mélangeur
+const int niveau_train_melangeur;	// en % de la taille de la fenêtre - % où le train s'arrête pour le mélangeur
+
+// Variables :
+etatMachine etatProcess;		// état de la machine à états
+bool etatCycle;				// le cycle est en marche
+int compteur_Broyeur;			// compte à rebourd du broyeur
+int compteur_Melangeur;			// compte à rebourd du mélangeur
+bool debut_Remplissage;			// Initialisation du remplissage
+bool fin_Remplissage;			// Aboutissage du remplissage (pas utilisé dans le programme final)
+bool debut_Broyeur;			// Initialisation du broyeur
+bool fin_Broyeur;			// Aboutissage du broyeur
+bool debut_Melangeur;			// Initialisation du mélangeur (pas utilisé dans le programme final)
+bool fin_Melangeur;			// Aboutissage du mélangeur
+bool debut_deplacement_Convoyeur;	// Initialisation du déplacement du convoyeur
+bool fin_deplacement_Convoyeur;		// Aboutissage du déplacement du convoyeur (pas utilisé dans le programme final)
+bool debut_deplacement_Train;		// Initialisation du déplacement du train
+bool fin_deplacement_Train;		// Aboutissage du déplacement du train
+int Progression_Convoyeur;		// progression du convoyeur en %
+int Progression_Train;			// progression du train en %
+bool Pause;				// le cycle est en pause

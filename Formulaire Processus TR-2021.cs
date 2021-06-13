@@ -23,6 +23,20 @@ namespace Processus_SIR_2021
     public partial class frmProcessus : Form
     {
         // Définition des constantes du processus
+        const int temps_broyeur = 5;                 // en secondes - temps de durée du broyeur
+        const int temps_melangeur = 10;              // en secondes - temps de durée du mélangeur
+        const int temps_timer_remplissage = 20;      // en millisecondes - temps pour chaque activation du timer de remplissage
+        const int temps_timer_convoyeur = 1;         // en millisecondes - temps pour chaque activation du timer du convoyeur
+        const int temps_timer_train = 1;             // en millisecondes - temps pour chaque activation du timer du train
+        const int pasRemplissage = 2;                // en pixels - pas de vidage de la cuve à chaque activation du timer de remplissage
+        const int pasDeplacementConvoyeur = 2;       // en pixels - pas de déplacement du convoyeur à chaque activation du timer du convoyeur
+        const int pasDeplacementTrain = 10;          // en pixels - pas de déplacement du train à chaque activation du timer du train
+        const int niveau_convoyeur_remplissage = 50; // en % de la taille du convoyeur - % où le convoyeur s'arrête pour le remplissage
+        const int niveau_convoyeur_broyeur = 75;     // en % de la taille du convoyeur - % où le convoyeur s'arrête pour le broyeur
+        const int niveau_convoyeur_melangeur = 100;  // en % de la taille du convoyeur - % où le convoyeur s'arrête pour le mélangeur
+        const int niveau_train_melangeur = 60;       // en % de la taille de la fenêtre - % où le train s'arrête pour le mélangeur
+
+
         const bool MARCHE = true;
         const bool ARRET = false;
 
@@ -42,29 +56,25 @@ namespace Processus_SIR_2021
         };
 
         // Déclaration des variables globales du processus
-        etatMachine etatProcess;
-        static bool etatCycle = ARRET;
+        etatMachine etatProcess;                            // état de la machine à états
+        static bool etatCycle = ARRET;                      // le cycle est en marche
 
-        public int pasDeplacementCaisse = 2;
-        public int pasDeplacementTrain = 10;
+        public PrivateFontCollection fontFromFile;          // variable pour l'impémentation de la police des comptes à rebourds
 
-        public PrivateFontCollection fontFromFile;
+        private int compteur_Broyeur = temps_broyeur;       // compte à rebourd du broyeur
+        private int compteur_Melangeur = temps_melangeur;   // compte à rebourd du mélangeur
+        private bool debut_Remplissage = true;              // Initialisation du remplissage
+        private bool debut_Broyeur = true;                  // Initialisation du broyeur
+        private bool fin_Broyeur = false;                   // Aboutissage du broyeur
+        private bool fin_Melangeur = false;                 // Aboutissage du mélangeur
+        private bool debut_deplacement_Convoyeur = true;    // Initialisation de l'activation du convoyeur
+        private bool debut_deplacement_Train = true;        // Initialisation du déplacement du train
+        private bool fin_deplacement_Train = false;         // Aboutissage du déplacement du train
+        private int Progression_Convoyeur = 0;              // progression du convoyeur en %
+        private int Progression_Train = 0;                  // progression du train en %
+        private bool Pause = false;                         // le cycle est en pause
 
-        private int compteur_Broyeur = 5;
-        private int compteur_Melangeur = 10;
-        private int pasRemplissage = 2;
-        private bool debut_Remplissage = true;
-        private bool debut_Broyeur = true;
-        private bool fin_Broyeur = false;
-        private bool fin_Melangeur = false;
-        private bool debut_deplacement_Convoyeur = true;
-        private bool fin_deplacement_Convoyeur = false;
-        private bool debut_deplacement_Train = true;
-        private bool fin_deplacement_Train = false;
-        private int Progression_Convoyeur = 0;
-        private int Progression_Train = 0;
-        private bool Pause = false;
-
+        // Initialisation du processus
         public frmProcessus()
         {
             InitializeComponent();
@@ -72,6 +82,11 @@ namespace Processus_SIR_2021
 
         private void frmProcessus_Load(object sender, EventArgs e)
         {
+            // Initialisation du temps des timers
+            tmrRemplissage.Interval = temps_timer_remplissage;
+            tmr_Convoyeur.Interval = temps_timer_convoyeur;
+            tmr_Train.Interval = temps_timer_train;
+
             // Ajout de la police des comptes à roubourds
             Font fontProcess;
             fontFromFile = new PrivateFontCollection();
@@ -93,9 +108,10 @@ namespace Processus_SIR_2021
             lblTempoBroueur.Font = fontProcess;
             lblTempoMelangeur.Font = fontProcess;
 
+            // Réinitialisation du cycle
             Reinitialisation();
 
-            // Activation du timer système
+            // Activation du timer systeme
             tmrProcess.Interval = 1;
             tmrProcess.Start();
         }
@@ -103,6 +119,7 @@ namespace Processus_SIR_2021
         // Fonction exécuté à chaque activation du timer du système
         private void tmrProcess_Tick(object sender, EventArgs e)
         {
+            // Exécution de la machine à état si le cycle n'est pas en pause
             if (Pause == false)
             {
                 // Exécution de la fonction correspondante à l'état du système si le cycle est en marche
@@ -161,22 +178,19 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état DEPLACE_CAISSE_REMPLISSAGE
         private void frmProcessus_DEPLACE_CAISSE_REMPLISSAGE()
         {
-            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < 50))
+            // Initialisation du déplacement de la caisse
+            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_remplissage))
             {
                 tmr_Convoyeur.Start();
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
-            else if ((Progression_Convoyeur >= 50) && (fin_deplacement_Convoyeur == false))
+            // Aboutissage du déplacement de la caisse
+            else if (Progression_Convoyeur >= niveau_convoyeur_remplissage)
             {
                 tmr_Convoyeur.Stop();
-                fin_deplacement_Convoyeur = true;
-            }
-            else if (fin_deplacement_Convoyeur == true)
-            {
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
-                fin_deplacement_Convoyeur = false;
                 etatProcess = etatMachine.REMPLISSAGE;
             }
         }
@@ -211,22 +225,19 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état DEPLACE_CAISSE_BROYEUR
         private void frmProcessus_DEPLACE_CAISSE_BROYEUR()
         {
-            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < 75))
+            // Initialisation déplacement caisse
+            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_broyeur))
             {
                 tmr_Convoyeur.Start();
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
-            else if ((Progression_Convoyeur >= 75) && (fin_deplacement_Convoyeur == false))
+            // Aboutissage déplacement caisse
+            else if (Progression_Convoyeur >= niveau_convoyeur_broyeur)
             {
                 tmr_Convoyeur.Stop();
-                fin_deplacement_Convoyeur = true;
-            }
-            else if (fin_deplacement_Convoyeur == true)
-            {
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
-                fin_deplacement_Convoyeur = false;
                 etatProcess = etatMachine.BROYEUR;
             }
         }
@@ -281,22 +292,19 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état DEPLACE_CAISSE_MELANGEUR
         private void frmProcessus_DEPLACE_CAISSE_MELANGEUR()
         {
-            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < 100))
+            // Initialisation déplacement caisse
+            if ((debut_deplacement_Convoyeur == true) && (Progression_Convoyeur < niveau_convoyeur_melangeur))
             {
                 tmr_Convoyeur.Start();
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur ON.png");
                 debut_deplacement_Convoyeur = false;
             }
-            else if ((Progression_Convoyeur >= 100) && (fin_deplacement_Convoyeur == false))
+            // Aboutissage déplacement caisse
+            else if (Progression_Convoyeur >= niveau_convoyeur_melangeur)
             {
                 tmr_Convoyeur.Stop();
-                fin_deplacement_Convoyeur = true;
-            }
-            else if (fin_deplacement_Convoyeur == true)
-            {
                 picMoteurConvoyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
                 debut_deplacement_Convoyeur = true;
-                fin_deplacement_Convoyeur = false;
                 etatProcess = etatMachine.MELANGEUR;
             }
         }
@@ -341,16 +349,19 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état DEPLACE_TRAIN_CHARGEMENT
         private void frmProcessus_DEPLACE_TRAIN_CHARGEMENT()
         {
-            if ((debut_deplacement_Train == true) && (Progression_Train < 60))
+            // Initialisation déplacement train
+            if ((debut_deplacement_Train == true) && (Progression_Train < niveau_train_melangeur))
             {
                 tmr_Train.Start();
                 debut_deplacement_Train = false;
             }
-            else if ((Progression_Train >= 60) && (fin_deplacement_Train == false))
+            // Aboutissage déplacement train
+            else if ((Progression_Train >= niveau_train_melangeur) && (fin_deplacement_Train == false))
             {
                 tmr_Train.Stop();
                 fin_deplacement_Train = true;
             }
+            // Aboutissage mélangeur et déplacement train
             else if ((fin_deplacement_Train == true) && (fin_Melangeur == true))
             {
                 debut_deplacement_Train = true;
@@ -362,20 +373,17 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état DEPLACE_TRAIN_FIN
         private void frmProcessus_DEPLACE_TRAIN_FIN()
         {
+            // Initialisation déplacement train
             if ((debut_deplacement_Train == true) && (Progression_Train < 100))
             {
                 tmr_Train.Start();
                 debut_deplacement_Train = false;
             }
-            else if ((Progression_Train >= 100) && (fin_deplacement_Train == false))
+            // Aboutissage déplacement train
+            else if (Progression_Train >= 100)
             {
                 tmr_Train.Stop();
-                fin_deplacement_Train = true;
-            }
-            else if (fin_deplacement_Train == true)
-            {
                 debut_deplacement_Train = true;
-                fin_deplacement_Train = false;
                 etatProcess = etatMachine.FIN;
             }
         }
@@ -383,10 +391,11 @@ namespace Processus_SIR_2021
         // Fonction correspondant à l'état FIN
         private void frmProcessus_FIN()
         {
-            // Réinitialisation du système
+            // Réinitialisation du cycle
             Reinitialisation();
         }
 
+        // Réinitialisation du cycle lors d'un appuye sur le bouton de conditions initiales
         private void BP_conditions_initiales_Click(object sender, EventArgs e)
         {
             Reinitialisation();
@@ -401,8 +410,10 @@ namespace Processus_SIR_2021
                 btnCycle.BackColor = Color.Lime;
                 etatProcess = etatMachine.INIT;
             }
+            // Gestion de la pause du cycle si le cycle est déjà activé
             else
             {
+                // Mise en pause du cycle s'il ne l'est pas déjà en desactivant tous les timers
                 if (Pause == false)
                 {
                     Pause = true;
@@ -417,6 +428,7 @@ namespace Processus_SIR_2021
                     picMoteurBroyeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
                     picMoteurMelangeur.Image = Image.FromFile(@"..\..\..\ressources\moteur OFF.png");
                 }
+                // Reactivation du cycle s'il est en pause en redémarrant l'étape en cours
                 else
                 {
                     if(etatProcess == etatMachine.DEPLACE_TRAIN_CHARGEMENT)
@@ -429,7 +441,6 @@ namespace Processus_SIR_2021
                     fin_Broyeur = false;
                     fin_Melangeur = false;
                     debut_deplacement_Convoyeur = true;
-                    fin_deplacement_Convoyeur = false;
                     debut_deplacement_Train = true;
                     fin_deplacement_Train = false;
                     Pause = false;
@@ -455,14 +466,13 @@ namespace Processus_SIR_2021
             // Reset des variables utilisées
             etatCycle = ARRET;
             debut_Remplissage = true;
-            compteur_Broyeur = 5;
-            compteur_Melangeur = 10;
+            compteur_Broyeur = temps_broyeur;
+            compteur_Melangeur = temps_melangeur;
             trkNiveau.Value = 100;
             debut_Broyeur = true;
             fin_Broyeur = false;
             fin_Melangeur = false;
             debut_deplacement_Convoyeur = true;
-            fin_deplacement_Convoyeur = false;
             debut_deplacement_Train = true;
             fin_deplacement_Train = false;
             Pause = false;
@@ -480,18 +490,21 @@ namespace Processus_SIR_2021
             btnCycle.BackColor = SystemColors.Control;
         }
 
+        // Avancement de la caisse quand le timer du convoyeur est activé
         private void tmr_Convoyeur_Tick(object sender, EventArgs e)
         {
-            pnlCaisse.Left += pasDeplacementCaisse;
+            pnlCaisse.Left += pasDeplacementConvoyeur;
             Progression_Convoyeur = (pnlCaisse.Left + pnlCaisse.Width / 2 - picConvoyeur.Left) * 100 / picConvoyeur.Width;
         }
 
+        // Avancement du train quand le timer du train est activé
         private void tmr_Train_Tick(object sender, EventArgs e)
         {
             picTrain.Left += pasDeplacementTrain;
             Progression_Train = picTrain.Left * 100 / Image.FromFile(@"..\..\..\ressources\Synoptique Processus 2021.png").Width;
         }
 
+        // Diminution du niveau de la cuve quand le timer de remplissage est activé
         private void tmrRemplissage_Tick(object sender, EventArgs e)
         {
             trkNiveau.Value -= pasRemplissage;
