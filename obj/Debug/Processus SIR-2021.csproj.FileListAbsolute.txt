@@ -1,0 +1,29 @@
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe.config
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.frmProcessus.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.Properties.Resources.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.GenerateResource.Cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csprojResolveAssemblyReference.cache
+E:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe.config
+E:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe
+E:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.pdb
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.AssemblyReference.cache
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.frmProcessus.resources
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.Properties.Resources.resources
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.GenerateResource.cache
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.CoreCompileInputs.cache
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.exe
+E:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.pdb
+F:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe.config
+F:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.exe
+F:\Cours S6\.NET\Processus SIR-2021\C#\bin\Debug\Processus SIR-2021.pdb
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csprojAssemblyReference.cache
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.frmProcessus.resources
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus_SIR_2021.Properties.Resources.resources
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.GenerateResource.cache
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.csproj.CoreCompileInputs.cache
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.exe
+F:\Cours S6\.NET\Processus SIR-2021\C#\obj\Debug\Processus SIR-2021.pdb

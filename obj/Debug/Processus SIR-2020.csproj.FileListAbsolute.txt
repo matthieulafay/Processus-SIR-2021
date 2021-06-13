@@ -1,0 +1,30 @@
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\bin\Debug\Processus SIR-2020.exe.config
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus SIR-2020.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus_SIR_2020.frmProcessus.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus_SIR_2020.Properties.Resources.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus SIR-2020.csproj.GenerateResource.Cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\bin\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\bin\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\Processus SIR-2020\obj\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\bin\Debug\Processus SIR-2020.exe.config
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\bin\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\bin\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus SIR-2020.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus_SIR_2020.frmProcessus.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus_SIR_2020.Properties.Resources.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020 Corrigé\C#\obj\Debug\Processus SIR-2020.csproj.GenerateResource.Cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\bin\Debug\Processus SIR-2020.exe.config
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\bin\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\bin\Debug\Processus SIR-2020.pdb
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus SIR-2020.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus_SIR_2020.frmProcessus.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus_SIR_2020.Properties.Resources.resources
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2019-2020\Processus SIR-2020\C#\obj\Debug\Processus SIR-2020.csproj.GenerateResource.Cache
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\bin\Debug\Processus SIR-2020.exe.config
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2020.exe
+C:\Users\Administrateur.DELL003A\Documents\Formation PL6008GI - .NET\Examen\2020-2021\Processus SIR-2021\C#\obj\Debug\Processus SIR-2020.pdb
